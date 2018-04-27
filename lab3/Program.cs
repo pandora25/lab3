@@ -1,43 +1,37 @@
 ﻿using System;
-
-
 namespace lab3
 {
     class Program
     {
         static void Main(string[] args)
         {
-
-
             while (true)
             {
                 int x;
-                Console.WriteLine("Please Enter your name?");
+                Console.Write("Please Enter your name? ");
                 string name = Console.ReadLine();
-                Console.WriteLine("enter a number between 1 and 100: ");
-               
-                bool z = int.TryParse(Console.ReadLine(), out x);
+                Console.Write("Enter a number between 1 and 100: ");
 
-                if (z)
+                if (int.TryParse(Console.ReadLine(), out x))
                 {
-                    if (x % 2 != 0 && x >= 75)
+                    if (x % 2 != 0 && x >= 2 && x < 25)
                     {
-                        Console.WriteLine($"output:{name.ToUpper()}: ,{x} Odd and greater than 75");
+                        Console.WriteLine($"output:{name.ToUpper()}: ,{x} Even and Less than 25");
                     }
-                    else if (x % 2 == 0 && x >= 50)
+                    else if (x % 2 == 0 && x >= 26 && x < 60)
                     {
-                        Console.WriteLine($"output:{name.ToUpper()}: ,{x} Even and less than 50");                
+                        Console.WriteLine($"output:{name.ToUpper()}: ,{x} Even and less than 60");
                     }
-                    else if (x < 50)
+                    else if (x >= 60)
                     {
                         if (x % 2 == 0)
                         {
-                            Console.WriteLine($"{name.ToUpper()}: ,you number is {x} less than 50 and Even");
+                            Console.WriteLine($"{name.ToUpper()}: ,you number is Even");
                         }
-                        else
+                        else if (x % 2 == 1)
                         {
-                            Console.WriteLine($"{name.ToUpper()}: ,you number is {x} less than 50 and Odd");
-                        }         
+                            Console.WriteLine($"{name.ToUpper()}: ,you number is  Odd");
+                        }
                     }
                     Console.WriteLine("Continue(y/n)");
 
@@ -53,10 +47,10 @@ namespace lab3
                 }
                 else
                 {
-                    Console.WriteLine("pls enter an inter number");
+                    Console.WriteLine("pleass enter an inter number");
                 }
             }
-            Console.WriteLine("thank you and bye");
+            Console.WriteLine("Thank You and Bye");
         }
     }
 }
